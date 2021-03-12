@@ -30,10 +30,10 @@ const ReadAPI = () => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState([]);
   const [isHungry, setIsHungry] = useState(true);
-  useEffect(() => {
-    fetch('https://reactnative.dev/movies.json')
+  useEffect(() => { //https://reactnative.dev/movies.json
+    fetch('https://eipcz.newwide.com/api/GetMAT_T_ZA_json.aspx?PNO=CCGAZ05100700203&FNO=CZ&UID=001&EMAIL=chiehyih.chen@newwide.com')//https://eipcz.newwide.com/api/GetMAT_T_ZA_json.aspx?PNO=CCGAZ05100700203&FNO=CZ&UID=001&EMAIL=chiehyih.chen@newwide.com
       .then((response) => response.json())
-      .then((json) => setData(json.movies))
+      .then((json) => setData(json.PPdata))
       .catch((error) => console.error(error))
       .finally(() => setLoading(false));
   }, []);
