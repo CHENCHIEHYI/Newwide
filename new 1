@@ -1,0 +1,118 @@
+import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { Modal,StyleSheet, Text, TextInput,TouchableHighlight, View, Image ,Button , Alert} from 'react-native';
+import Constants from 'expo-constants';
+
+
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <Image style={styles.logo} source={{
+       uri:'data:image/png;base64,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',
+        }}/>
+
+        <View style={{width: 400, height: 80, backgroundColor: '#CCCC00'}}>
+			<Text style={styles.paragraph}>* 開發測試平台 *
+			</Text>
+		</View>
+		
+		<View style={{width: 120, height: 80, backgroundColor: '#F6FC9F'}} >
+			<TextInput style={{height: 40 , textAlign: 'center'}}placeholder="請輸入帳號!"/>
+			<TextInput style={{height: 40 , textAlign: 'center'}}placeholder="請輸入密碼!"/>
+		</View>
+		
+        <Button
+          title="提交"
+          onPress={() => Alert.alert('成功送出!')}
+        />
+
+	  
+      <TouchableHighlight style={{width: 400, height: 80, backgroundColor: '#F6FC9F'}}
+			onPress={() => {setModalVisible(true);}}>
+        <Text>Show Modal</Text>
+      </TouchableHighlight>	
+	  <Modal
+        animationType="slide"
+        transparent={false}
+        visible={modalvisible}
+        onRequestClose={() => {
+          Alert.alert('Modal has been closed.');
+        }}>
+        <View style={{ marginTop: 22 }}>
+          <View>
+            <Text>Hello World!</Text>
+
+            <TouchableHighlight
+              onPress={() => {
+                setModalVisible(!modalVisible);
+              }}>
+              <Text>Hide Modal</Text>
+            </TouchableHighlight>
+          </View>
+        </View>
+      </Modal>
+	  
+		<StatusBar style="auto" />
+    </View>
+	
+
+
+
+
+  );
+}
+
+
+const PizzaTranslator = () => {
+  const [text, setText] = useState('');
+  return (
+    <View style={{padding: 10}}>
+      <TextInput
+        style={{height: 40}}
+        placeholder="Type here to translate!"
+        onChangeText={text => setText(text)}
+        defaultValue={text}/>
+		
+      <Text style={{padding: 10, fontSize: 42}}>
+        {text.split(' ').map((word) => word && '🍕').join(' ')}
+      </Text>
+	  
+    </View>
+  );
+}
+
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+    bigBlue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30,
+    textAlign: 'center'
+  },
+  red: {
+    color: 'red',
+  },
+    paragraph: {
+    margin: 24,
+    fontSize: 22,
+	color: '#fff',
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
+  tinyLogo: {
+    width: 50,
+    height: 50,
+  },
+  logo: {
+    width: 300,
+    height: 60,
+  },
+});

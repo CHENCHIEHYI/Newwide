@@ -1,0 +1,34 @@
+InfoDataGridView1	temp
+
+InfoDataGridView2	temp2
+Chart1		temp2
+
+
+InfoDataGridView3	temp3
+Chart2  	temp3 總表
+Chart3   	temp3 部門 (數量占比)
+Chart4   	temp4 部門 (異常占比)
+Chart5		temp4 部門 (包裝占比)
+
+
+
+累计退修量LAB_TV1
+累计包装量LAB_TV2
+累计异常率LAB_TV3
+
+異常日期:
+idtp_Date1
+idtp_Date2
+
+
+        Series3.XValueMember = "F_S02"
+        Series3.YValueMembers = "F_FLOAT03"
+        Series4.XValueMember = "F_S02"
+        Series4.YValueMembers = "F_FLOAT04"		
+        Series5.XValueMember = "F_S02"
+        Series5.YValueMembers = "F_FLOAT05"		
+		
+		
+		
+		
+		{  "chart": {    "caption": "Countries With Most Oil Reserves [2017-18]",    "subcaption": "In MMbbl = One Million barrels",    "xaxisname": "Country",    "yaxisname": "Reserves (MMbbl)",    "numbersuffix": "K",    "theme": "fusion"  },  "data": [    {      "label": "Venezuela",      "value": "290"    },    {      "label": "Saudi",      "value": "260"    },    {      "label": "Canada",      "value": "180"    },    {      "label": "Iran",      "value": "140"    },    {      "label": "Russia",      "value": "115"    },    {      "label": "UAE",      "value": "100"    },    {      "label": "US",      "value": "30"    },    {      "label": "China",      "value": "30"    }  ]}
