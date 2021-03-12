@@ -11,6 +11,7 @@ import {
   View,
   ActivityIndicator,
   FlatList,
+  ImageBackground
 } from "react-native";
 // import {helloWorld, msg} from "./hello.js";
 // import {helloWorld as myFun , msg as myMsg} from "./hello.js";
@@ -22,6 +23,7 @@ const [ aa , bb ] = APParr;
 const getFullName = (firstName, secondName, thirdName) => {
   return firstName + " " + secondName + " " + thirdName;
 }
+const imageB = { uri: "https://reactjs.org/logo-og.png" };
 
 
 const ReadAPI = () => {
@@ -39,26 +41,26 @@ const ReadAPI = () => {
   return (
     
     <View style={{ flex: 1, padding: 24 }}>
-
-      <Text>
-        APP測試開發_ReadAPI
-      </Text>
-            
-        <Image
+      <ImageBackground source={imageB} style={styles2.image}>
+        <Text style={styles2.text}>
+          APP測試開發_ReadAPI
+        </Text>
+         <Image
           source={{
             uri: 'https://reactnative.dev/docs/assets/p_cat1.png',
           }}
-          style={{ width: 200, height: 200 }}
+          style={{ width: 150, height: 50 ,resizeMode:'center'}}
         />
         
         <TextInput
         style={{
           height: 40,
           borderColor: 'gray',
-          borderWidth: 1
+          borderWidth: 1,
+          color:'white'
         }}
         defaultValue={getFullName("CHEN", "CHIEH", "YI")}
-        style={{ width: 200, height: 40 ,borderBottomWidth:2 }}
+        style={{ width: 200, height: 40 ,borderBottomWidth:2,color:'white' }}
         />
 
          <Button
@@ -77,10 +79,14 @@ const ReadAPI = () => {
           data={data}
           keyExtractor={({ id }, index) => id}
           renderItem={({ item }) => (
-            <Text>{item.title}, {item.releaseYear}</Text>
+            <Text style={styles2.textsm}>{item.title}, {item.releaseYear}</Text>
           )}
         />
-      )}
+      )}    
+      
+      </ImageBackground>
+            
+
     </View>
   );
 };
@@ -208,7 +214,31 @@ const styles = StyleSheet.create({
   }
 });
 
-
+const styles2 = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: "column"
+  },
+  image: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center"
+  },
+  text: {
+    color: "white",
+    fontSize: 14,
+    fontWeight: "bold",
+    textAlign: "center",
+    backgroundColor: "#000000a0"
+  },
+  textsm: {
+    color: "white",
+    fontSize: 11,
+    fontWeight: "bold",
+    textAlign: "center",
+    backgroundColor: "#000000a0"
+  }
+});
 
 
 
