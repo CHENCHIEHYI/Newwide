@@ -5,10 +5,9 @@ import {Camera} from 'expo-camera';
 import * as Permissions from 'expo-permissions';
 
 
-import {ScollView,StyleSheet,FlatList,Text,View,Button,Linking,Dimensions} from 'react-native';
+import {ScollView,StyleSheet,FlatList,Text,View,Button,Linking} from 'react-native';
 
 
-const { width, height } = Dimensions.get('window');
 
 export default class QRScannerScreen extends Component{
   state={
